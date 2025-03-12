@@ -1,254 +1,260 @@
 @font-face {
-    font-family: eraser;
-    src: url(/fonts/EraserRegular-webfont.woff);
+	font-family: eraser;
+	src: url(./fonts/EraserRegular-webfont.woff);
 }
 
 @font-face {
-    font-family: addex;
-        src: url(/fonts/AddeX.ttf);
+	font-family: addex;
+	src: url(./fonts/AddeX.ttf);
 }
 
 html {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
-*, *::before, *::after {
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 body {
-    display: grid;
-    grid-template-rows: 1fr 10fr;
-    height: 90vh;
-    background-color: rgba(0, 0, 0, 0.894);
-    font-family: addex, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px;
-    color: white;
+	zoom: 70%;
+	display: grid;
+	grid-template-rows: 1fr 10fr;
+	height: 90vh;
+	background-color: rgba(0, 0, 0, 0.894);
+	font-family: addex, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	padding: 10px;
+	color: white;
 }
 
 main {
-    display: grid;
-    grid-template: 1fr 10fr / 1fr 2fr 1fr 2fr 1fr;
-    grid-template-areas:  
-                        ". . button . ."
-                        ". player1 gameboard player2 .";
-    gap: 80px;
+	display: grid;
+	grid-template: 1fr 10fr / 1fr 2fr 1fr 2fr 1fr;
+	grid-template-areas:
+		". . button . ."
+		". player1 gameboard player2 .";
+	gap: 80px;
 }
 
 header {
-    text-align: center;
-    font-size: 9rem;
-    margin: 20px;
+	text-align: center;
+	font-size: 9rem;
+	margin: 20px;
 }
 
 .start-button {
-    grid-area: button;
-    justify-self: center;
+	grid-area: button;
+	justify-self: center;
 }
 
 button {
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    width: max-content;
-    padding: 15px 20px;
-    border-radius: 20px; 
-    border: solid 4px rgb(41, 212, 235);
-    margin-top: 30px;
-    appearance: none;
-    font-size: 3rem;
-    font-weight: 600;
-    font-family: inherit;
-    box-shadow: 2px 3px 8px 2px rgba(255, 255, 255, 0.2);;
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+	width: max-content;
+	padding: 15px 20px;
+	border-radius: 20px;
+	border: solid 4px rgb(41, 212, 235);
+	margin-top: 30px;
+	appearance: none;
+	font-size: 3rem;
+	font-weight: 600;
+	font-family: inherit;
+	box-shadow: 2px 3px 8px 2px rgba(255, 255, 255, 0.2);
 }
 
 button:hover {
-    cursor: pointer;
-    outline: #4e2ad0 solid;
+	cursor: pointer;
+	outline: #4e2ad0 solid;
 }
 
 .player {
-    color: white;
-    font-size: 100px;
-    background-image: url(images/black-1072366_1280.jpg);
-    height: 250px;
-    padding: 20px;
-    min-width: max-content;
-    border: solid 8px #ffff;
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	color: white;
+	font-size: 100px;
+	background-image: url(images/black-1072366_1280.jpg);
+	height: 250px;
+	padding: 20px;
+	min-width: max-content;
+	border: solid 8px #ffff;
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .player.one {
-    grid-area: player1;
+	grid-area: player1;
 }
 
 .game-board {
-    grid-area: gameboard;
+	grid-area: gameboard;
 }
 
 .player.two {
-    grid-area: player2;
+	grid-area: player2;
 }
 
 .current {
-    box-shadow: 1px 1px 10px 5px #0ff;
+	box-shadow: 1px 1px 10px 5px #0ff;
 }
 
 .current::after {
-    content: "Your turn!";
-    color: white;
-    position: relative;
-    top: 30px;
+	content: "Your turn!";
+	color: white;
+	position: relative;
+	top: 30px;
 }
 
 .game-board {
-    display: grid;
-    grid-template-columns: 250px 12px 250px 12px 250px;
-    grid-template-rows: 250px 12px 250px 12px 250px;
-} 
+	display: grid;
+	grid-template-columns: 250px 12px 250px 12px 250px;
+	grid-template-rows: 250px 12px 250px 12px 250px;
+}
 
 .border {
-    box-sizing: content-box;
-;}
+	box-sizing: content-box;
+}
 
 .border.right {
-    border-right: double 12px #ffff;
-    border-radius: 15px /15px 225px 15px 255px;
-    grid-column: 4;
-    grid-row: 1/6;
+	border-right: double 12px #ffff;
+	border-radius: 15px /15px 225px 15px 255px;
+	grid-column: 4;
+	grid-row: 1/6;
 }
 
 .border.left {
-    border-left: double 12px #ffff;
-    border-radius: 15px /15px 300px 15px 255px;
-    grid-column: 2;
-    grid-row: 1/6;
+	border-left: double 12px #ffff;
+	border-radius: 15px /15px 300px 15px 255px;
+	grid-column: 2;
+	grid-row: 1/6;
 }
 
 .border.top {
-    border-top: double 12px #ffff;
-    border-radius: 255px 15px 225px 15px/80px 15px 255px;
-    grid-row: 2;
-    grid-column: 1/6;
+	border-top: double 12px #ffff;
+	border-radius: 255px 15px 225px 15px/80px 15px 255px;
+	grid-row: 2;
+	grid-column: 1/6;
 }
 
 .border.bottom {
-    border-bottom: double 12px #ffff;
-    border-radius: 255px 15px 225px 15px/15px 225px 100px 255px;
-    grid-row: 4;
-    grid-column: 1/6;
+	border-bottom: double 12px #ffff;
+	border-radius: 255px 15px 225px 15px/15px 225px 100px 255px;
+	grid-row: 4;
+	grid-column: 1/6;
 }
 
 .square {
-    font-size: 15rem;
-    font-family: eraser, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(95, 215, 255);
-    height: 250px;
-    width: 250px;
-    display: flex;
+	font-size: 15rem;
+	font-family: eraser, "Franklin Gothic Medium", "Arial Narrow", Arial,
+		sans-serif;
+	color: rgb(95, 215, 255);
+	height: 250px;
+	width: 250px;
+	display: flex;
 }
 
 [data-square-number="1"] {
-    justify-content: end;
+	justify-content: end;
 }
 
 [data-square-number="2"] {
-    justify-content: end;
-    padding-right: 30px;
+	justify-content: end;
+	padding-right: 30px;
 }
 
 [data-square-number="3"] {
-    justify-content: center;
+	justify-content: center;
+	position: relative;
+	bottom: 20px;
 }
 [data-square-number="4"] {
-    padding-left: 30px;
+	padding-left: 30px;
 }
 
 [data-square-number="5"] {
-    justify-content: center;
-    padding-right: 20px;
-    padding-top: 10px;
+	justify-content: center;
+	padding-right: 20px;
+	padding-top: 10px;
 }
 [data-square-number="6"] {
-    justify-content: start;
-    padding-left: 10px;
-    padding-bottom: 10px;
+	justify-content: start;
+	padding-left: 10px;
+	padding-bottom: 10px;
 }
 [data-square-number="7"] {
-    justify-content: center;
-    padding-top: 20px;
+	justify-content: center;
+	padding-top: 20px;
 }
 [data-square-number="8"] {
-    justify-content: center;
-    padding-left: 10px;
-    padding-top: 50px;
+	justify-content: center;
+	padding-left: 10px;
+	padding-top: 50px;
 }
 [data-square-number="9"] {
-    justify-content: end;
-    padding-right: 20px;
+	justify-content: end;
+	padding-right: 20px;
 }
 
 dialog.form[open] {
-    margin-top: 200px;
-    font-size: 1.8rem;
+	margin-top: 200px;
+	font-size: 1.8rem;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    justify-content: space-around;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 20px;
+	justify-content: space-around;
 }
 
 li {
-    font-size: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+	font-size: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 input {
-    font-size: 2rem;
-    display: block;
-    appearance: none;
-    height: 40px;
-    border-radius: 10px;
-    border: #E5E7EB solid;
+	font-size: 2rem;
+	display: block;
+	appearance: none;
+	height: 40px;
+	border-radius: 10px;
+	border: #e5e7eb solid;
 }
 
 dialog.form button {
-    color: #000;
-    padding: 10px;
+	color: #000;
+	padding: 10px;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
 }
 
 dialog.win[open],
 dialog.tie[open] {
-    margin-top: 200px;
-    font-size: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 70px;
-    min-width: max-content;
+	margin-top: 200px;
+	font-size: 6rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 70px;
+	min-width: max-content;
 }
 
 p {
-    margin: 0;
+	margin: 0;
 }
 
 dialog.win button,
 dialog.tie button {
-    color: black;
-    font-size: 3rem;
+	color: black;
+	font-size: 3rem;
 }

@@ -71,14 +71,6 @@ const gamePlay = (function() {
 
 
 const win = (function() {
-    const getWinMessage = function (activePlayerInfo) {
-
-        alert(`${activePlayerInfo.playerName} has won!`);
-        };
-    const getTieMessage = function () {
-        alert("It's a tie...");
-    };
-
     const getWinCondition = function (activePlayerInfo) {
         const activePlayerMark = activePlayerInfo.playerMark;
         const wins = [[1, 2, 3], [1, 4, 7], [1, 5, 9], [2, 5, 8], [3, 6, 9], [3, 5, 7], [4, 5, 6], [7, 8, 9]];
@@ -96,7 +88,7 @@ const win = (function() {
         return false;
     };
 
-    return { getWinMessage, getTieMessage, getWinCondition };
+    return { getWinCondition };
     })();
 
 
